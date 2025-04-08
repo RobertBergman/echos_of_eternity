@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useAppDispatch, useAppSelector } from '../hooks/useAppDispatch';
+import { useAppSelector } from '../hooks/useAppDispatch';
 import GameBoard from './GameBoard';
 import ChronoEnergyBar from './ChronoEnergyBar';
 import GameStats from './GameStats';
@@ -52,7 +52,8 @@ const GameFooter = styled.div`
 `;
 
 const Game: React.FC = () => {
-  const { isPlaying, level, timeFragments } = useAppSelector(state => state.game);
+  // Game state is managed by Redux and used by child components
+  useAppSelector(state => state.game);
   
   return (
     <GameContainer>

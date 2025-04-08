@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { useAppDispatch, useAppSelector } from '../hooks/useAppDispatch';
 import { 
   updateTimeFragment, 
-  removeTimeFragment, 
   depleteChronoEnergy,
   incrementScore,
   incrementPuzzlesSolved
@@ -118,7 +117,7 @@ const GameBoard: React.FC = () => {
     if (selectedFragmentId === null) return;
     
     // Find the selected fragment
-    const fragment = timeFragments.find(f => f.id === selectedFragmentId);
+    const fragment: TimeFragmentType | undefined = timeFragments.find(f => f.id === selectedFragmentId);
     if (!fragment) return;
     
     // Check if energy is available for movement
@@ -152,7 +151,7 @@ const GameBoard: React.FC = () => {
   };
   
   // Check for pattern matches after moving or rotating fragments
-  const checkForPatternMatches = () => {
+  const checkForPatternMatches = useCallback(() => {
     // Get unsolved fragments
     const unsolvedFragments = timeFragments.filter(f => !f.solved);
     
@@ -184,7 +183,7 @@ const GameBoard: React.FC = () => {
         setPatternNotification(prev => ({ ...prev, visible: false }));
       }, 3000);
     }
-  };
+  }, [timeFragments, dispatch, setPatternNotification]);
   
   // Show the potential cell when a fragment is selected
   useEffect(() => {
@@ -203,7 +202,7 @@ const GameBoard: React.FC = () => {
     if (timeFragments.length > 0) {
       checkForPatternMatches();
     }
-  }, [timeFragments]);
+  }, [timeFragments, checkForPatternMatches]);
   
   return (
     <BoardContainer>

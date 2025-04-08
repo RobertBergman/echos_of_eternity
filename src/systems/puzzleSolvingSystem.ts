@@ -1,5 +1,4 @@
 import { TimeFragment } from '../types/game';
-import timeFragmentSystem from './timeFragmentSystem';
 
 /**
  * Patterns that can form valid solutions

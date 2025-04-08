@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TimeFragment as TimeFragmentType } from '../types/game';
 import { useAppDispatch } from '../hooks/useAppDispatch';
-import { rotateTimeFragment, updateTimeFragment } from '../store/gameSlice';
+import { rotateTimeFragment } from '../store/gameSlice';
 import chronoEnergySystem from '../systems/chronoEnergySystem';
 
 interface TimeFragmentProps {
