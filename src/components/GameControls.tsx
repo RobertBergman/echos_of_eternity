@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useAppDispatch, useAppSelector } from '../hooks/useAppDispatch';
 import { 
@@ -9,6 +9,7 @@ import {
 } from '../store/gameSlice';
 import timeFragmentSystem from '../systems/timeFragmentSystem';
 import { addTimeFragment } from '../store/gameSlice';
+import HelpModal from './HelpModal';
 
 const ControlsContainer = styled.div`
   display: flex;
@@ -71,6 +72,7 @@ const GameStatus = styled.div<{ $isPlaying: boolean }>`
 const GameControls: React.FC = () => {
   const dispatch = useAppDispatch();
   const { isPlaying, board, level, timeFragments } = useAppSelector(state => state.game);
+  const [helpModalOpen, setHelpModalOpen] = useState(false);
   
   const handleStartGame = () => {
     dispatch(startGame());
@@ -134,7 +136,16 @@ const GameControls: React.FC = () => {
         <Button $variant="danger" onClick={handleResetGame}>
           Reset Game
         </Button>
+        
+        <Button onClick={() => setHelpModalOpen(true)}>
+          Help
+        </Button>
       </ButtonRow>
+      
+      <HelpModal 
+        isOpen={helpModalOpen} 
+        onClose={() => setHelpModalOpen(false)} 
+      />
     </ControlsContainer>
   );
 };
