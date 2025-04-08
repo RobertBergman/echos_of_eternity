@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/echos_of_eternity/static/css/main.e6c13ad2.css",
+    "main.js": "/echos_of_eternity/static/js/main.7d3bb06d.js",
+    "static/js/453.45f4a60a.chunk.js": "/echos_of_eternity/static/js/453.45f4a60a.chunk.js",
+    "index.html": "/echos_of_eternity/index.html",
+    "main.e6c13ad2.css.map": "/echos_of_eternity/static/css/main.e6c13ad2.css.map",
+    "main.7d3bb06d.js.map": "/echos_of_eternity/static/js/main.7d3bb06d.js.map",
+    "453.45f4a60a.chunk.js.map": "/echos_of_eternity/static/js/453.45f4a60a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.7d3bb06d.js"
+  ]
+}
