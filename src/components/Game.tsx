@@ -78,6 +78,8 @@ const Game: React.FC = () => {
       
       <GameFooter>
         Echoes of Eternity v1.0 | A timeless puzzle experience
+        <br />
+        © Robert Bergman 2025. All rights reserved.
       </GameFooter>
     </GameContainer>
   );

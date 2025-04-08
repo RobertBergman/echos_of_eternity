@@ -83,6 +83,15 @@ const PatternSection = styled.div`
   border-radius: 10px;
 `;
 
+const Copyright = styled.p`
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+`;
+
 const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
   // Close modal when clicking outside
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -221,6 +230,8 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
         </Section>
         
         <p>As you progress through levels, the game becomes more challenging with more fragments to manage. Good luck restoring the flow of time!</p>
+        
+        <Copyright>© Robert Bergman 2025. All rights reserved.</Copyright>
       </ModalContent>
     </ModalOverlay>
   );
